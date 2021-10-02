@@ -12,16 +12,14 @@ class MyApp extends StatelessWidget {
       title: 'Material App',
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('Background Animation'),
+          title: const Text('Background Animation - Day 4'),
           elevation: 0,
         ),
         body: BackgroundAnimation(
           child: const Text(
-            'Hello World',
+            'Hello Flutter Dev',
             style: TextStyle(
-              fontSize: 32,
-              fontWeight: FontWeight.w600,
-            ),
+                fontSize: 32, fontWeight: FontWeight.w600, color: Colors.white),
           ),
           backgroundColor: Color((Random().nextDouble() * 0xFFFFFF).toInt())
               .withOpacity(1.0),
