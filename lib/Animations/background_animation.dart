@@ -37,7 +37,7 @@ class BackgroundAnimation extends StatelessWidget {
                 8,
                 (index) => ItemMoving(
                     size: Size(constrain.maxWidth, constrain.maxHeight),
-                    speed: 60.0,
+                    // speed: 60.0,
                     color: UniqueColorGenerator.getColor().withOpacity(0.9))),
             Center(
               child: child,
@@ -55,7 +55,7 @@ class ItemMoving extends StatefulWidget {
       required this.size,
       this.color = Colors.purple,
       this.listColors,
-      this.speed = 80.0,
+      this.speed = 16.0,
       this.blurSigma = 40})
       : super(key: key);
 
@@ -136,7 +136,7 @@ class _ItemMovingState extends State<ItemMoving> with TickerProviderStateMixin {
 
       final seconDuration = (_targetPoint - _lastPoint).distance / widget.speed;
       // debugPrint(
-      // 'seconDuration: ${seconDuration}, _targetPoint: ${_targetPoint.dx},${_targetPoint.dy}, size: ${size.width},${size.height}');
+      // 'seconDuration: ${(seconDuration * 1000).toInt()}, _targetPoint: ${_targetPoint.dx},${_targetPoint.dy}, size: ${size.width},${size.height}');
       _controllerX.animateTo(_targetPoint.dx,
           duration: Duration(milliseconds: (seconDuration * 1000).toInt()));
 
